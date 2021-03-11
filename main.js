@@ -9,17 +9,46 @@ function isAdmin(str){
     }
 }
 
-function getEmail(str) {
-    const first = firstName;
-    const last = lastName;
-    const arr1 = [firstName + '.' + lastName];
-    if (arr1){
-    return arr1 + '@codeimmersives.com'
-    }
+function getEmail(user) {
+    // const first = firstName;
+    // const last = lastName;
+    // const arr1 = [firstName + '.' + lastName];
+    // if (arr1){
+    // return arr1 + '@codeimmersives.com'
+    // }
+    const lowerFirst = user.firstName.toLowerCase();
+    const lowerLast = user.lastName.toLowerCase();
+    return `${lowerFirst}.${lowerLast}@codeimmersives.com`;
+    
 }
 // const arr1 = [{firstName}, {lastName}];
 // console.log(arr1)
 
+function getPlaylistLength(playlistObject) {
+    return playlistObject.songs.length;
+}
+
+function getHardestHomework(homeworks) {
+    let lowestAverageScore = Infinity;
+    let nameOfHardest = "";
+    for(const item of homeworks){
+        if (item.averageScore < lowestAverageScore) {
+            nameOfHardest =item.name;
+            lowestAverageScore = item.averageScore;
+        }
+    }
+    return nameOfHardest
+}
+
+function createPhonebook(names, numbers) {
+    const phonebook = {};
+    for (let i = 0; i < names.length; i ++) {
+        const name = names[i];
+        const number = numbers[i];
+        phonebook[name] = number;
+    }
+    return phonebook;
+}
 
 
 
